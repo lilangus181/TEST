@@ -1,0 +1,144 @@
+:root {
+  color-scheme: light;
+  font-family: "Inter", "Noto Sans SC", system-ui, sans-serif;
+  background: #f5f7fb;
+  color: #1a1d29;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 32px;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 24px;
+}
+
+.header h1 {
+  margin: 0 0 6px;
+  font-size: 28px;
+}
+
+.header p {
+  margin: 0;
+  color: #5e6478;
+}
+
+.status {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 14px;
+  background: #ffffff;
+  border-radius: 999px;
+  box-shadow: 0 4px 12px rgba(25, 32, 56, 0.08);
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #4caf50;
+  display: inline-block;
+  box-shadow: 0 0 8px rgba(76, 175, 80, 0.7);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+.card {
+  background: #fff;
+  border-radius: 16px;
+  padding: 20px;
+  box-shadow: 0 10px 30px rgba(21, 24, 35, 0.08);
+}
+
+.card.full {
+  grid-column: 1 / -1;
+}
+
+.metrics,
+.params {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.label {
+  display: block;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: #7a8197;
+  margin-bottom: 6px;
+}
+
+strong {
+  font-size: 22px;
+}
+
+canvas {
+  width: 100%;
+  border-radius: 12px;
+  background: linear-gradient(180deg, rgba(79, 110, 255, 0.15), rgba(255, 255, 255, 0));
+}
+
+.param-controls {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin: 16px 0 8px;
+}
+
+.param-controls input {
+  width: 180px;
+}
+
+.primary {
+  border: none;
+  background: #4f6eff;
+  color: white;
+  padding: 10px 16px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 14px;
+  box-shadow: 0 6px 16px rgba(79, 110, 255, 0.35);
+}
+
+.trajectory-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+
+.controls button {
+  margin-left: 8px;
+  padding: 8px 14px;
+  border-radius: 8px;
+  border: 1px solid #d6dbe6;
+  background: #f8f9fc;
+  cursor: pointer;
+}
+
+.timeline {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 12px;
+}
+
+.timeline input {
+  flex: 1;
+}
