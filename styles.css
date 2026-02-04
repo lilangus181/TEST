@@ -1,0 +1,281 @@
+:root {
+  color-scheme: light;
+  font-family: "Inter", "Noto Sans SC", system-ui, sans-serif;
+  background: #eef1f7;
+  color: #101323;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+.page {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 32px 28px 48px;
+}
+
+.header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 24px;
+  margin-bottom: 30px;
+}
+
+.eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  font-size: 12px;
+  color: #5e6277;
+  margin: 0 0 8px;
+}
+
+.header h1 {
+  margin: 0 0 8px;
+  font-size: 30px;
+}
+
+.subtitle {
+  margin: 0;
+  color: #5e6277;
+}
+
+.status {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 16px;
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 10px 20px rgba(16, 19, 35, 0.08);
+}
+
+.status strong {
+  display: block;
+  font-size: 16px;
+}
+
+.status span {
+  display: block;
+  font-size: 12px;
+  color: #6b7287;
+}
+
+.dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #35c27a;
+  display: inline-block;
+  box-shadow: 0 0 10px rgba(53, 194, 122, 0.8);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px;
+}
+
+.card {
+  background: #ffffff;
+  border-radius: 20px;
+  padding: 20px;
+  box-shadow: 0 12px 30px rgba(21, 24, 35, 0.08);
+}
+
+.card.full {
+  grid-column: 1 / -1;
+}
+
+.card-title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+
+.card-title h2 {
+  margin: 0;
+  font-size: 18px;
+}
+
+.tag {
+  font-size: 12px;
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: #eef1ff;
+  color: #4f6eff;
+}
+
+.metrics,
+.params,
+.progress {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.label {
+  display: block;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #7a8197;
+  margin-bottom: 6px;
+}
+
+strong {
+  font-size: 22px;
+}
+
+small {
+  display: block;
+  margin-top: 6px;
+  color: #9aa1b6;
+}
+
+canvas {
+  width: 100%;
+  border-radius: 16px;
+  background: linear-gradient(180deg, rgba(79, 110, 255, 0.12), rgba(255, 255, 255, 0));
+}
+
+.progress-bar {
+  height: 10px;
+  width: 100%;
+  background: #edf0f7;
+  border-radius: 999px;
+  overflow: hidden;
+  margin-bottom: 10px;
+}
+
+.progress-fill {
+  height: 100%;
+  width: 0;
+  background: linear-gradient(90deg, #4f6eff, #7ad8ff);
+  border-radius: 999px;
+}
+
+.progress-meta {
+  display: flex;
+  justify-content: space-between;
+  color: #6b7287;
+  font-size: 13px;
+}
+
+.select-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 16px;
+  margin-top: 12px;
+}
+
+select {
+  width: 100%;
+  margin-top: 8px;
+  padding: 8px 10px;
+  border-radius: 10px;
+  border: 1px solid #dde2f1;
+  background: #f9faff;
+}
+
+.reward-list {
+  display: grid;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.reward-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 10px 12px;
+  border-radius: 12px;
+  background: #f7f8fd;
+}
+
+.reward-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.reward-bar {
+  flex: 1;
+  height: 8px;
+  border-radius: 999px;
+  background: #e3e7f2;
+  overflow: hidden;
+}
+
+.reward-bar span {
+  display: block;
+  height: 100%;
+  background: linear-gradient(90deg, #4f6eff, #8f9bff);
+}
+
+.primary {
+  border: none;
+  background: #4f6eff;
+  color: white;
+  padding: 10px 16px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 14px;
+  box-shadow: 0 8px 20px rgba(79, 110, 255, 0.35);
+}
+
+.trajectory-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 12px;
+}
+
+.trajectory-header h2 {
+  margin: 0 0 6px;
+}
+
+.trajectory-header p {
+  margin: 0;
+  color: #6b7287;
+}
+
+.controls button {
+  margin-left: 8px;
+  padding: 8px 14px;
+  border-radius: 8px;
+  border: 1px solid #d6dbe6;
+  background: #f8f9fc;
+  cursor: pointer;
+}
+
+.timeline {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 12px;
+}
+
+.timeline input {
+  flex: 1;
+}
+
+@media (max-width: 900px) {
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .status {
+    width: 100%;
+  }
+}

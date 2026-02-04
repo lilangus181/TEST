@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>强化学习训练控制台</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="page">
+      <header class="header">
+        <div>
+          <p class="eyebrow">RL Training Studio</p>
+          <h1>强化学习训练控制台</h1>
+          <p class="subtitle">全量监控奖励权重、算法配置、训练进度与对抗场景。</p>
+        </div>
+        <div class="status">
+          <span class="dot" id="status-dot"></span>
+          <div>
+            <strong id="status-text">运行中</strong>
+            <span id="status-episode">Episode #0</span>
+          </div>
+        </div>
+      </header>
+
+      <main class="grid">
+        <section class="card">
+          <div class="card-title">
+            <h2>实时指标</h2>
+            <span class="tag">Live</span>
+          </div>
+          <div class="metrics">
+            <div>
+              <span class="label">平均回报</span>
+              <strong id="metric-reward">0</strong>
+              <small>过去 100 步</small>
+            </div>
+            <div>
+              <span class="label">胜率</span>
+              <strong id="metric-win">0%</strong>
+              <small>最近 50 局</small>
+            </div>
+            <div>
+              <span class="label">Loss</span>
+              <strong id="metric-loss">0</strong>
+              <small>动态调整</small>
+            </div>
+          </div>
+          <canvas id="reward-chart" width="520" height="200"></canvas>
+        </section>
+
+        <section class="card">
+          <div class="card-title">
+            <h2>训练进度</h2>
+            <span class="tag">Progress</span>
+          </div>
+          <div class="progress">
+            <div>
+              <span class="label">当前 Episode 步长</span>
+              <strong id="metric-steps">0</strong>
+            </div>
+            <div>
+              <span class="label">总 Episode 数</span>
+              <strong id="metric-total-episodes">0</strong>
+            </div>
+          </div>
+          <div class="progress-bar">
+            <div class="progress-fill" id="progress-fill"></div>
+          </div>
+          <div class="progress-meta">
+            <span>当前大轮</span>
+            <strong id="metric-round">1 / 10</strong>
+          </div>
+        </section>
+
+        <section class="card">
+          <div class="card-title">
+            <h2>算法与对抗场景</h2>
+            <span class="tag">Config</span>
+          </div>
+          <div class="params">
+            <div>
+              <span class="label">算法</span>
+              <strong id="param-algo">PPO</strong>
+            </div>
+            <div>
+              <span class="label">对抗场景</span>
+              <strong id="param-scenario">1v1</strong>
+            </div>
+            <div>
+              <span class="label">探索率 ε</span>
+              <strong id="param-epsilon">0.15</strong>
+            </div>
+            <div>
+              <span class="label">折扣因子</span>
+              <strong id="param-gamma">0.99</strong>
+            </div>
+          </div>
+          <div class="select-row">
+            <label>
+              算法选择
+              <select id="algo-select">
+                <option value="PPO">PPO</option>
+                <option value="DDPG">DDPG</option>
+                <option value="SAC">SAC</option>
+                <option value="TD3">TD3</option>
+              </select>
+            </label>
+            <label>
+              对抗场景
+              <select id="scenario-select">
+                <option value="1v1">1v1</option>
+                <option value="2v2">2v2</option>
+                <option value="3v3">3v3</option>
+              </select>
+            </label>
+          </div>
+        </section>
+
+        <section class="card">
+          <div class="card-title">
+            <h2>奖励权重分配</h2>
+            <span class="tag">Reward</span>
+          </div>
+          <div class="reward-list" id="reward-list"></div>
+          <button class="primary" id="sync-btn">同步最新参数</button>
+        </section>
+
+        <section class="card full">
+          <div class="trajectory-header">
+            <div>
+              <h2>轨迹回放与决策视窗</h2>
+              <p>播放与暂停可视化轨迹，快速定位决策点。</p>
+            </div>
+            <div class="controls">
+              <button id="play-btn">播放</button>
+              <button id="pause-btn">暂停</button>
+              <button id="reset-btn">重置</button>
+            </div>
+          </div>
+          <canvas id="trajectory-canvas" width="1120" height="300"></canvas>
+          <div class="timeline">
+            <input type="range" id="timeline" min="0" max="100" value="0" />
+            <span id="timeline-value">0%</span>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>
