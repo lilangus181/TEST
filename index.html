@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>强化学习训练面板</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="header">
+      <div>
+        <h1>强化学习训练面板</h1>
+        <p>实时查看训练效果、参数配置与轨迹回放。</p>
+      </div>
+      <div class="status">
+        <span class="dot" id="status-dot"></span>
+        <span id="status-text">运行中</span>
+      </div>
+    </header>
+
+    <main class="grid">
+      <section class="card">
+        <h2>训练指标</h2>
+        <div class="metrics">
+          <div>
+            <span class="label">Episode</span>
+            <strong id="metric-episode">0</strong>
+          </div>
+          <div>
+            <span class="label">平均回报</span>
+            <strong id="metric-reward">0</strong>
+          </div>
+          <div>
+            <span class="label">成功率</span>
+            <strong id="metric-success">0%</strong>
+          </div>
+          <div>
+            <span class="label">损失</span>
+            <strong id="metric-loss">0</strong>
+          </div>
+        </div>
+        <canvas id="reward-chart" width="480" height="180"></canvas>
+      </section>
+
+      <section class="card">
+        <h2>关键参数</h2>
+        <div class="params">
+          <div>
+            <span class="label">学习率</span>
+            <strong id="param-lr">0.0005</strong>
+          </div>
+          <div>
+            <span class="label">折扣因子</span>
+            <strong id="param-gamma">0.99</strong>
+          </div>
+          <div>
+            <span class="label">探索率 ε</span>
+            <strong id="param-epsilon">0.15</strong>
+          </div>
+          <div>
+            <span class="label">批量大小</span>
+            <strong id="param-batch">256</strong>
+          </div>
+        </div>
+        <div class="param-controls">
+          <label>
+            目标回报
+            <input type="range" id="target-reward" min="50" max="300" value="180" />
+          </label>
+          <span id="target-reward-value">180</span>
+        </div>
+        <button class="primary" id="sync-btn">同步最新参数</button>
+      </section>
+
+      <section class="card full">
+        <div class="trajectory-header">
+          <h2>轨迹回放</h2>
+          <div class="controls">
+            <button id="play-btn">播放</button>
+            <button id="pause-btn">暂停</button>
+            <button id="reset-btn">重置</button>
+          </div>
+        </div>
+        <canvas id="trajectory-canvas" width="960" height="280"></canvas>
+        <div class="timeline">
+          <input type="range" id="timeline" min="0" max="100" value="0" />
+          <span id="timeline-value">0%</span>
+        </div>
+      </section>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>
